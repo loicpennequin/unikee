@@ -1,0 +1,73 @@
+button, input[type='submit']{
+    border-radius: 6px;
+    background: linear-gradient(var(--primary-light), var(--primary));
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-bottom: 1px solid var(--primary-dark);
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover, input[type='submit']:hover{
+    background: var(--primary-dark);
+}
+
+.file-label{
+    border-radius: 6px;
+    background: transparent;
+    color: var(--primary);
+    padding: 8px 12px;
+    border: 1px solid var(--primary-dark);
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button[disabled], input[type='submit'][disabled]{
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+input[type="file"]{
+    display: none;
+}
+
+#header-image-preview{
+    width: 50%;
+    margin: 0 auto 15px;
+}
+
+#header-image-preview img{
+    width: 100%;
+}
+
+#intro-text{
+    font-family: Helvetica;
+    padding: 5px;
+}
+
+#gallery{
+    width: 50%;
+    margin: 0 auto 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,150px);
+    grid-template-rows: repeat(auto-fit, 150px);
+    grid-gap : 5px;
+}
+
+.gallery-element{
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-element img{
+    width: 100%
+}
+
+.gallery-element .close-btn{
+    position: absolute;
+    margin: 10px;
+    top: 0;
+    right: 0;
+    z-index: 2;
+}

@@ -1,0 +1,177 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Unikee</title>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Rubik|Satisfy" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100" rel="stylesheet">
+        <link href='{{ base_url() }}/css/main.css' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <nav class="navbar flex-horizontal">
+          <div class="navbar-left">
+            <div class="flex-horizontal">
+              <img class="logo" src="{{ base_url() }}/assets/logo.png" alt="">
+              <h1 class="navbar-title">Unikee</h1>
+            </div>
+            <div class="social-network_bar">
+              <ul class="flex-horizontal">
+                <li class="navbar-menu_item">
+                  <span><i class="fab fa-facebook"></i></span>
+                </li>
+                <li class="navbar-menu_item">
+                  <span><i class="fab fa-linkedin"></i></span>
+                </li>
+                <li class="navbar-menu_item">
+                  <span><i class="fab fa-instagram"></i></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="navbar-right">
+            <ul class="flex-horizontal">
+              <li class="navbar-menu_item">
+                <a href="#">Presentation</a>
+              </li>
+              <li class="navbar-menu_item">
+                <a href="#">Services</a>
+              </li>
+              <li class="navbar-menu_item">
+                <a href="#">Location</a>
+              </li>
+              <li class="navbar-menu_item">
+                <a href="#">Galleries</a>
+              </li>
+              <li class="navbar-menu_item">
+                <a href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <header class="landing-page">
+          <div class="call-to-action">
+            <a href="#devis-form">Je demande mon devis gratuitement</a>
+          </div>
+        </header>
+
+        <main>
+          <h2 class="section-title title-right">A propos d'Unikee</h2>
+          <section class="presentation clearfix">
+            <img class="about-photo" src="{{ base_url() }}/assets/jm-profil2.jpg" alt="">
+            <p>{{ intro_text }}</p>
+            <p class="quote">"Insert Citation Here."</p>
+          </section>
+
+          <section class="services">
+            <h2 class="section-title title-left">Nos Services</h2>
+            <div class="services-list flex-horizontal">
+
+              <article class="services-list-item">
+                <h3 class="services-list-item_title">Organisation d'événement</h3>
+                <div class="services-list-item_content">
+                  Organisation et décoration mariage, baptême, anniversaire, soirée à thême et bien plus.
+                </div>
+              </article>
+
+              <article class="services-list-item">
+                <h3 class="services-list-item_title">Décoration d'intérieur</h3>
+                <div class="services-list-item_content">
+                  Décoration mobilier, luminaire, tapis, murale, voilage, cadres.
+                </div>
+              </article>
+
+              <article class="services-list-item">
+                <h3 class="services-list-item_title">Vente de produits</h3>
+                <div class="services-list-item_content">
+                  Meuble Design AMADEUS, Luminaire, Fontaine, Brumisateur, Vase Asiatique, Statuette, Encens du monde, Bijoux, Cadre... Rendez-vous sur ma page facebook.
+                </div>
+              </article>
+
+            </div>
+          </section>
+
+          <section class="gallerie-container">
+            <h2 class="section-title title-right">Nos realisations</h2>
+            {% for image in images %}
+                <img src="{{ base_url() }}/assets/gallery/{{image.path}}" style="width: 300px; height: 300px; display: inline-block;"/>
+            {% endfor %}
+          </section>
+
+          <section>
+            <h2 class="section-title title-left">Nos Forfaits</h2>
+            <div class="card-price_grid">
+
+              <div>
+                <img class="card-price_service" src="{{ base_url() }}/assets/carte-adultes.jpg" alt="">
+                <a class="card-price_service_link">Je choisis cette offre</a>
+              </div>
+
+              <div>
+                <img class="card-price_service" src="{{ base_url() }}/assets/carte-cocktail.jpg" alt="">
+                <a class="card-price_service_link">Je choisis cette offre</a>
+              </div>
+
+              <div>
+                <img class="card-price_service" src="{{ base_url() }}/assets/carte-mariage.jpg" alt="">
+                <a class="card-price_service_link">Je choisis cette offre</a>
+              </div>
+
+              <div>
+                <img class="card-price_service" src="{{ base_url() }}/assets/carte-enfants.jpg" alt="">
+                <a class="card-price_service_link">je choisis cette offre</a>
+              </div>
+
+            </div>
+          </section>
+
+
+          <section>
+            <h2 class="section-title title-right">Contact</h2>
+            <div class="contact-form_container">
+              <form id="devis-form" class="contact-form">
+                <div class="contact-form_field">
+                  <label for="name">Votre nom</label>
+                  <input type="text" name="name" value="">
+                  <span class="contact-form_field_icon"><i class="far fa-user"></i></span>
+                </div>
+
+                <div class="contact-form_field">
+                  <label for="email">Votre adresse email</label>
+                  <input type="text" name="email" value="">
+                  <span class="contact-form_field_icon"><i class="far fa-envelope"></i></span>
+                </div>
+
+                <div class="contact-form_field">
+                  <label for="phone">Votre numero de téléphone (facultatif)</label>
+                  <input type="text" name="phone" value="">
+                  <span class="contact-form_field_icon"><i class="fas fa-mobile-alt"></i></span>
+                </div>
+
+                <div class="contact-form_field">
+                  <label for="phone">Votre message</label>
+                  <textarea name="message" rows="8" placeholder="Je vous contacte pour...
+    Mon besoin porte principalement sur...
+    Mon projet doit être terminé avant le...
+          "></textarea>
+                </div>
+
+                <div class="contact-form_field">
+                  <input type="submit" name="" value="Envoyer">
+                </div>
+
+              </form>
+            </div>
+          </section>
+
+        </main>
+
+        <footer>
+          footer
+        </footer>
+
+        <script type="text/javascript">
+          window.FontAwesomeConfig={searchPseudoElements:true}
+        </script>
+    </body>
+</html>

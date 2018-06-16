@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --primary: #dd7f69;
+    --primary-dark: #cd735d;
+    --primary-light: #e38a75;
+}
+
+body {
+    margin: 50px 0 0 0;
+    padding: 0;
+    width: 100%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #888;
+    font-size: 18px;
+}
+
+h1 {
+    color: var(--primary);
+    letter-spacing: -3px;
+    font-family: 'Lato', sans-serif;
+    font-size: 80px;
+    font-weight: 200;
+    margin-bottom: 0;
+}
