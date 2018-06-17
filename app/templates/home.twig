@@ -1,10 +1,13 @@
 <html>
     <head>
         <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>Unikee</title>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Rubik|Satisfy" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100" rel="stylesheet">
         <link href='{{ base_url() }}/css/main.css' rel='stylesheet' type='text/css'>
+        <script src="{{ base_url( )}}/js/home.js" charset="utf-8"></script>
     </head>
     <body>
         <nav class="navbar flex-horizontal">
@@ -28,24 +31,12 @@
             </div>
           </div>
 
-          <div class="navbar-right">
-            <ul class="flex-horizontal">
-              <li class="navbar-menu_item">
-                <a href="#">Presentation</a>
-              </li>
-              <li class="navbar-menu_item">
-                <a href="#">Services</a>
-              </li>
-              <li class="navbar-menu_item">
-                <a href="#">Location</a>
-              </li>
-              <li class="navbar-menu_item">
-                <a href="#">Galleries</a>
-              </li>
-              <li class="navbar-menu_item">
-                <a href="#">Contact</a>
-              </li>
-            </ul>
+          <div class="navbar-menu flex-horizontal">
+            <a href="#about" class="navbar-menu_item">A propos</a>
+            <a href="#services" class="navbar-menu_item">Services</a>
+            <a href="#gallery" class="navbar-menu_item">Gallerie</a>
+            <a href="#offers" class="navbar-menu_item">Forfaits</a>
+            <a href="#contact" class="navbar-menu_item">Contact</a>
           </div>
         </nav>
 
@@ -56,7 +47,7 @@
         </header>
 
         <main>
-          <h2 class="section-title title-right">A propos d'Unikee</h2>
+          <h2 id="about" class="section-title title-right">A propos d'Unikee</h2>
           <section class="presentation clearfix">
             <img class="about-photo" src="{{ base_url() }}/assets/jm-profil2.jpg" alt="">
             <p>{{ intro_text }}</p>
@@ -64,8 +55,8 @@
           </section>
 
           <section class="services">
-            <h2 class="section-title title-left">Nos Services</h2>
-            <div class="services-list flex-horizontal">
+            <h2 id="services" class="section-title title-left">Nos Services</h2>
+            <div class="services-list">
 
               <article class="services-list-item">
                 <h3 class="services-list-item_title">Organisation d'événement</h3>
@@ -92,14 +83,18 @@
           </section>
 
           <section class="gallerie-container">
-            <h2 class="section-title title-right">Nos realisations</h2>
-            {% for image in images %}
-                <img src="{{ base_url() }}/assets/gallery/{{image.path}}" style="width: 300px; height: 300px; display: inline-block;"/>
-            {% endfor %}
+            <h2 id="gallery" class="section-title title-right">Gallerie</h2>
+            <div class="gallerie">
+                {% for image in images %}
+                <div class="gallerie-item">
+                    <img src="{{ base_url() }}/assets/gallery/{{image.path}}"/>
+                </div>
+                {% endfor %}
+            </div>
           </section>
 
           <section>
-            <h2 class="section-title title-left">Nos Forfaits</h2>
+            <h2 id="offers" class="section-title title-left">Nos Forfaits</h2>
             <div class="card-price_grid">
 
               <div>
@@ -127,7 +122,7 @@
 
 
           <section>
-            <h2 class="section-title title-right">Contact</h2>
+            <h2 id="contact" class="section-title title-right">Contact</h2>
             <div class="contact-form_container">
               <form id="devis-form" class="contact-form">
                 <div class="contact-form_field">

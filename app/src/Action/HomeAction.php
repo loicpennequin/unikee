@@ -36,8 +36,6 @@ final class HomeAction
         $images = $stmt->fetchAll(PDO::FETCH_OBJ);
 
         $db = null;
-
-        var_dump($images);
         $this->view->render($response, 'home.twig', [
             'intro_text' => $intro_text,
             'images' => $images
