@@ -338,8 +338,8 @@ main{
     margin: 5px;
     width: 200px;
     height: 200px;
-    border-radius: 6px;
-    border: solid 2px var(--orange);
+    /* border-radius: 6px;
+    border: solid 2px var(--orange); */
     position: relative;
     cursor: pointer;
 }
@@ -467,4 +467,34 @@ main{
   bottom: 17px;
   left: 20px;
   color: var(--orange);
+}
+
+.footer{
+    padding-top: 30px;
+    padding-left: 10px;
+}
+
+.footer-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100%; */
+}
+
+.link-social{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.link-social i{
+    color: black;
+    margin: 5px;
+}
+
+
+.link-social i:hover{
+    color: var(--orange);
+    cursor: pointer;
 }
